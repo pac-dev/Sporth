@@ -29,6 +29,19 @@ Then:
 1. make
 2. sudo make install
 
+### Some notes on Windows
+Windows users should be able to compile Sporth and libsporth using [msys2](http://www.msys2.org). 
+Due to some interesting quirks an platform differences, some features will need to be disabled.
+
+To get Sporth compiled:
+
+1. run "make conifg.mk" to generate the configuration file. 
+2. Inside config.mk, uncomment NO\_LIBSNDFILE, NO\_LIBDL, and NO\_SPA.
+3. Inside config.mk, disable the live coding interface by commenting out the variable LIVE\_CODING.
+4. make
+5. make install
+
+
 ## Quick start
 
 To see Sporth in action, run this command from the inside the project directory:

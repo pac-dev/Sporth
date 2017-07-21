@@ -27,6 +27,16 @@ else
 LIBS += -ldl
 endif
 
+ifdef NO_LIBSNDFILE
+CFLAGS += -DNO_LIBSNDFILE
+else
+LIBS += -lsndfile
+endif
+
+ifdef NO_SPA
+CFLAGS += -DNO_SPA
+endif
+
 include ugens/cdb/Makefile
 
 ifdef BUILD_POLYSPORTH
@@ -45,7 +55,7 @@ OBJ += func.o plumber.o stack.o parse.o hash.o ftmap.o
 
 SPORTHLIBS = libsporth.a
 
-LIBS += -lsoundpipe -lsndfile -lm 
+LIBS += -lsoundpipe -lm 
 
 config.mk: config.def.mk
 	cp config.def.mk config.mk

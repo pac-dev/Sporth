@@ -152,6 +152,12 @@ zitarev
 # Disable libdl
 # NO_LIBDL=1
 
+# Disable libsndfile
+# NO_LIBSNDFILE=1
+
+# Disable SPA
+# NO_SPA=1
+
 # Build jack driver
 # BUILD_JACK=1
 

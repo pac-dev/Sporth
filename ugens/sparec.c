@@ -3,6 +3,10 @@
 int sporth_sparec(sporth_stack *stack, void *ud)
 {
     plumber_data *pd = ud;
+#ifdef NO_SPA
+    plumber_print(pd, "Sorry, sparec is not implemented here.\n");
+    return PLUMBER_NOTOK;
+#else
     SPFLOAT input, output;
     const char * filename;
     sp_sparec *sparec;
@@ -40,4 +44,5 @@ int sporth_sparec(sporth_stack *stack, void *ud)
             break;
     }
     return PLUMBER_OK;
+#endif
 }

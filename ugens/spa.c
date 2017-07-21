@@ -3,6 +3,10 @@
 int sporth_spa(sporth_stack *stack, void *ud)
 {
     plumber_data *pd = ud;
+#ifdef NO_SPA
+    plumber_print(pd, "Sorry, spa is not implemented here.\n");
+    return PLUMBER_NOTOK;
+#else
     SPFLOAT out;
     const char * filename;
     sp_spa *spa;
@@ -39,4 +43,5 @@ int sporth_spa(sporth_stack *stack, void *ud)
             break;
     }
     return PLUMBER_OK;
+#endif
 }
